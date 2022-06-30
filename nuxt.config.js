@@ -33,10 +33,16 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
+    '@nuxtjs/vuetify',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
+
+  axios: { proxy: true },
+  proxy: {
+    '/api': 'http://localhost:8000',
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},

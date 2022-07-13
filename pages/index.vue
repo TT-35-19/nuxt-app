@@ -1,10 +1,14 @@
 <template>
   <div class="home">
-    <Hero />
+    <!-- HeroMovie -->
+    <HeroMovie />
 
+    <!-- Search -->
+
+    <!-- Movies -->
     <div class="container movies">
       <div id="movie-grid" class="movies-grid">
-        <div class="movie" v-for="movie, index in movies" :key="index">
+        <div v-for="movie, index in movies" :key="index" class="movie">
           <div class="movie-img">
             <img
               :src="`https://image.tmdb.org/t/p/w500/${movie.poster_path}`"
@@ -58,7 +62,6 @@ export default {
       result.data.results.forEach((movie) => {
         this.movies.push(movie)
       })
-      console.log(this.movies)
     }
   }
 }

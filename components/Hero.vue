@@ -1,12 +1,12 @@
 <template>
-  <dev class="hero">
+  <div class="hero">
     <img src="../assets/imgs/movieHero.jpg" alt="" />
     <div class="text-container">
       <span class="mini-heading">Now Streaming</span>
       <h1><span>Now</span>Streaming</h1>
       <a href="#movie-grid" class="button">Vue Movies</a>
     </div>
-  </dev>
+  </div>
 </template>
 
 <script>

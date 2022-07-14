@@ -19,6 +19,9 @@
       </button>
     </div>
 
+    <!-- Loading -->
+    <Loading v-if="$fetchState.pending" />
+
     <!-- Movies -->
     <div class="container movies">
       <!-- Searched Movies -->
@@ -92,7 +95,9 @@
 </template>
 
 <script>
+import Loading from '../components/Loading.vue'
 export default {
+  components: { Loading },
   data() {
     return {
       movies: [],
@@ -107,6 +112,7 @@ export default {
     }
     await this.searchMovies()
   },
+  fetchDelay: 1000,
   methods: {
     async getMovies() {
       const data = this.$axios.get(
@@ -116,6 +122,7 @@ export default {
       result.data.results.forEach((movie) => {
         this.movies.push(movie)
       })
+      console.log('hi')
     },
     async searchMovies() {
       const data = this.$axios.get(

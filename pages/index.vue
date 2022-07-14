@@ -51,7 +51,7 @@
             </p>
             <NuxtLink
               class="button button-light"
-              :to="{ name: 'movies-movieid', params: {moviesid: movie.id} }"
+              :to="{ name: 'movies-movieid', params: { movieid: movie.id } }"
             >Get More Info
             </NuxtLink>
           </div>
@@ -84,7 +84,7 @@
             </p>
             <NuxtLink
               class="button button-light"
-              :to="{ name: 'movies-movieid', params: {moviesid: movie.id} }"
+              :to="{ name: 'movies-movieid', params: { movieid: movie.id } }"
             >Get More Info
             </NuxtLink>
           </div>
@@ -121,8 +121,8 @@ export default {
       const result = await data
       result.data.results.forEach((movie) => {
         this.movies.push(movie)
+        console.log(this.movies)
       })
-      console.log('hi')
     },
     async searchMovies() {
       const data = this.$axios.get(
